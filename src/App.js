@@ -1,15 +1,21 @@
 import React from 'react';
+import { Route, NavLink } from 'react-router-dom';
+
 import './App.css';
 
 import axios from 'axios';
-
 import CharacterList from './components/CharacterList';
+import CharacterCard from './components/CharacterCard';
+import Home from './components/Home';
+import Character from './components/Character';
+
 
 class App extends React.Component{
   constructor(){
     super();
     this.state = {
-      data: []
+      data: [],
+      selectedChar: null
     }
   }
 
@@ -29,9 +35,24 @@ class App extends React.Component{
   render(){
     return (
       <div className="App">
-        <CharacterList
-        data={this.state.data}
+
+        <nav>
+          <NavLink to="/">Home</NavLink>{" "}
+          <NavLink exact to="/character-list">Characters</NavLink>
+        </nav>
+
+        <Route exact path="/" component={Home} />
+        <Route exact path="/character-list" render={ props => <CharacterList {...props} data={this.state.data} /> } />
+        <Route 
+        path="/character-list/:id"
+        render={ props => 
+        <Character 
+        {...props}
+        data={this.state.data} 
+        /> }
         />
+ 
+        
       </div>
     );
   }

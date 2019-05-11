@@ -13,25 +13,26 @@ h1 {
 }
 
 .character-card {
-  margin: 8px;
+  margin: 16px;
   border-radius: 25px;
   width: 300px;
-  height: 550px;
+  height: 515px;
+  box-shadow: 0 0 8px silver;
 }
 
 .character-avatar {
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .card-title {
-  opacity: 0.8;
+  opacity: 0.7;
   height: 55px;
   font-size: 1.4rem;
-  background: rgb(27, 27, 27);
+  background: white;
   position: relative;
   bottom: 80px;
-  width: 100%;
+  width: 292px;
   padding-top: 8px;
   padding-left: 8px;
   display: flex;
@@ -41,14 +42,14 @@ h1 {
 .card-details {
   position: relative;
   bottom: 100px;
-  background: rgb(56, 56, 56);
+  background: #FAFAFA;
   padding: 8px;
-  border-bottom-right-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .card-details strong {
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-size: 0.7rem;
 }
 
@@ -69,7 +70,7 @@ h1 {
 }
 
 .card-details span {
-  color: orange;
+  color: rgb(96, 183, 230);
 }
 
 
