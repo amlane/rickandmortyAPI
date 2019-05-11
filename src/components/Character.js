@@ -23,7 +23,7 @@ class Character extends React.Component{
         }
         return (
             <div className="character">
-                <p>{this.state.item}</p>
+                <p>{this.state.item.name}</p>
             </div>
         )
     }

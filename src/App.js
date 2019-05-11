@@ -5,7 +5,6 @@ import './App.css';
 
 import axios from 'axios';
 import CharacterList from './components/CharacterList';
-import CharacterCard from './components/CharacterCard';
 import Home from './components/Home';
 import Character from './components/Character';
 
