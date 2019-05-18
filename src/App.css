@@ -7,13 +7,13 @@
   display: flex;
   width: 200px;
   justify-content: space-between;
-  margin: 25px auto;
+  margin: 25px auto 0 auto;
 }
 
 .nav-links a {  
   text-decoration: none;
   color: white;
-  background: black;
+  background: #2B2434;
   font-family: 'Indie Flower', cursive;
   font-size: 0.8rem;
   border: 1px solid;
@@ -22,7 +22,7 @@
 
 .nav-links a.active {
   font-weight: bold;
-  color: black;
+  color: #2B2434;
   background: white;
 }
 
@@ -31,44 +31,24 @@
   flex-direction: column;
   align-items: center;
   height: auto;
-  width: 50vw;
+  width: 100vw;
   margin: 0 auto;
-  justify-content: space-around;
-  background: #FAFAFA;
-  opacity: 0.9;
   border-radius: 15px;
   padding: 5%;
 }
 
 .title-img {
-  width: 40vw;
-}
-
-.homepage p {
-  width: 40vw;
-  margin: 0 auto;
-  border-radius: 8px;
-}
-
-
-p {
-  padding: 15px;
-  font-size: .8rem;
-  font-family: sans-serif;
-  line-height: 1.5;
-}
-
-h1 {
-  text-align: center;
+  width: 100vw;
+  background: rgb(255, 255, 255);
 }
 
 .character-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 auto;
+  margin: 30px auto;
   padding: 30px 0;
-  background: #FAFAFA;
+  background: #2B2434;
   width: 60%;
   border-radius: 25px;
 }
@@ -77,13 +57,13 @@ h1 {
   border-radius: 50%;
   width: 105px;
   height: 105px;
-  box-shadow: 0 0 8px silver;
-  border: 1px solid silver;
+  box-shadow: 0 0 8px #00F0A3;
+  border: 1px solid #00F0A3;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: silver;
+  background: #00F0A3;
 }
 
 .character-list a {
@@ -98,7 +78,7 @@ h1 {
 .character-avatar {
   border-radius: 50%;
   width: 100px;
-  border: 1px solid silver;
+  border: 1px solid #00F0A3;
   opacity: 1;
 }
 
@@ -106,8 +86,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #FAFAFA;
-  width: 100px;
+  background: #2B2434;
+  width: 200px;
   margin: 100px auto;
   border-radius: 8px;
 }
@@ -119,11 +99,11 @@ h1 {
   align-items: center;
   margin: 55px auto;
   padding: 30px 0;
-  max-width: 350px;
-  width: 95%;
-  border: 1px solid silver;
-  box-shadow: 0 0 8px silver;
-  background: rgb(240, 240, 240);
+  max-width: 300px;
+  width: 85%;
+  border: 1px solid #00F0A3;
+  box-shadow: 0 0 8px #00F0A3;
+  background: #2B2434;
 }
 
 .single-char-img {
@@ -134,12 +114,13 @@ h1 {
 .single-char-details {
   list-style: none;
   padding: 10px;
-  width: 250px;
+  width: 280px;
 }
 
 .single-char-details h2 {
   font-size: 1.4rem;
   text-align: center;
+  color: white;
 }
 
 .single-char-details li {
@@ -148,18 +129,25 @@ h1 {
   padding: 5px;
   border-bottom: 1px solid silver;
   font-size: 0.7rem;
+  color: white;
 }
 
 .single-char-details span {
-  color: rgb(255, 130, 116);
+  color: #00F0A3;
 }
 
 .about-page p {
-  background: #FAFAFA;
+  background: #2B2434;;
   margin: 25px auto;
-  opacity: 0.9;
   border-radius: 8px;
   width: 40vw;
+  padding: 35px;
+  font-size: 1rem;
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #00F0A3;
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
 }
 
 

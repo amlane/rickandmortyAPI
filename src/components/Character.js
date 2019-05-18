@@ -11,19 +11,21 @@ class Character extends React.Component{
     }
 
     componentDidMount(){
+        setTimeout(() => {
         axios
         .get(`https://rickandmortyapi.com/api/character/${this.props.match.params.id}`)
         .then( res => {
             this.setState({ item: res.data }) 
         })
         .catch( err => console.log(err) )
+    }, 1500)
     }
 
     render(){
         console.log(this.state.item)
         if(!this.state.item) {
             return (
-                <div className="loader"><Loader type="ThreeDots" color="#00F0A3" height={80} width={80} /></div>
+                <div className="loader"><Loader type="ThreeDots" color="#00F0A3" height={100} width={100} /></div>
             )
         }
         return (
