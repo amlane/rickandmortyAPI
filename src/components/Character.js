@@ -23,7 +23,7 @@ class Character extends React.Component{
         console.log(this.state.item)
         if(!this.state.item) {
             return (
-                <div className="loader"><Loader type="ThreeDots" color="#somecolor" height={80} width={80} /></div>
+                <div className="loader"><Loader type="ThreeDots" color="#00F0A3" height={80} width={80} /></div>
             )
         }
         return (
