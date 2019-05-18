@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, NavLink } from 'react-router-dom';
 
-import './App.css';
+import './styling/App.css';
 
 import axios from 'axios';
 import CharacterList from './components/CharacterList';
@@ -15,19 +15,29 @@ class App extends React.Component{
     super();
     this.state = {
       data: [],
-      selectedChar: null
+      pageNum: 2
     }
   }
 
   componentDidMount(){
     axios
-    .get('https://rickandmortyapi.com/api/character')
+    .get(`https://rickandmortyapi.com/api/character/?page=${this.state.pageNum}`)
     .then( res => {
       this.setState({ data: res.data.results })
     })
     .catch( err => {
       console.log(err)
     })
+  }
+
+  pageChange = e => {
+    e.preventDefault();
+    console.log('clicked')
+    if(this.state.pageNum === 1) return;
+    this.setState({ 
+      pageNum: ++this.state.pageNum
+     })
+     console.log(this.state.pageNum);
   }
 
 
@@ -42,7 +52,15 @@ class App extends React.Component{
         </nav>
 
         <Route exact path="/" component={Home} />
-        <Route exact path="/character-list" render={ props => <CharacterList {...props} data={this.state.data} /> } />
+        <Route 
+        exact path="/character-list" 
+        render={ props => 
+        <CharacterList 
+        {...props} 
+        data={this.state.data} 
+        pageNum={this.state.pagNum}
+        pageChange={this.pageChange}
+        /> } />
         <Route 
         path="/character-list/:id"
         render={ props => 

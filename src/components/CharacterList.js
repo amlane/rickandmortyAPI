@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 
 function CharacterList(props){
 
-
     return (
+        <>
+        <div className="btn-wrapper">
+        <button onClick={props.pageChange}>Prev</button> <button>Next</button>
+        </div>
         <div className="character-list">
         {props.data.map( item => {
             return (
@@ -16,8 +19,8 @@ function CharacterList(props){
             )
         })}
         </div>
+        </>
     )
 }
-
 
 export default CharacterList;
