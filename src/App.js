@@ -22,7 +22,6 @@ class App extends React.Component{
     axios
     .get('https://rickandmortyapi.com/api/character')
     .then( res => {
-      console.log(res.data.results)
       this.setState({ data: res.data.results })
     })
     .catch( err => {

@@ -1,15 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CharacterList(props){
-    function routeToItem(ev) {
-        ev.preventDefault();
-        props.history.push(`/character-list/${props.match.params.id}`);
-      }
+
+
     return (
-        <div onClick={ev => routeToItem(ev)} className="character-list">
+        <div className="character-list">
         {props.data.map( item => {
             return (
-            <div className="character-card">
+            <Link to={`/character-list/${item.id}`}>
+            <div key={item.id} className="character-card">
                 <img className="character-avatar" src={item.image} alt={item.name} />
                 <header className="card-title">{item.name}</header>
                 <section className="card-details">
@@ -21,10 +21,12 @@ function CharacterList(props){
                     <li><strong>origin </strong><span>{item.origin.name}</span></li>
                 </section>
              </div>
+             </Link>
             )
         })}
         </div>
     )
 }
+
 
 export default CharacterList;

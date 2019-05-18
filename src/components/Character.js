@@ -13,12 +13,15 @@ class Character extends React.Component{
     componentDidMount(){
         axios
         .get(`https://rickandmortyapi.com/api/character/${this.props.match.params.id}`)
-        .then( res => this.setState({ item: res.data.results }) )
+        .then( res => {
+            this.setState({ item: res.data }) 
+        })
         .catch( err => console.log(err) )
     }
 
     render(){
         if(!this.state.item) {
+            console.log(this.state.item)
             return <h2>Loading data...</h2>
         }
         return (
