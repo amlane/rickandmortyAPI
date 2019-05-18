@@ -8,8 +8,8 @@ function CharacterList(props){
         <div className="character-list">
         {props.data.map( item => {
             return (
-            <Link className="card-links" to={`/character-list/${item.id}`}>
-            <div key={item.id} className="character-card">
+            <Link key={item.id} className="card-links" to={`/character-list/${item.id}`}>
+            <div className="character-card">
                 <img className="character-avatar" src={item.image} alt={item.name} />
              </div>
              </Link>

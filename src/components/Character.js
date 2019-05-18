@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Route } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 class Character extends React.Component{
     constructor(props){
@@ -22,18 +22,20 @@ class Character extends React.Component{
     render(){
         console.log(this.state.item)
         if(!this.state.item) {
-            return <h2>Loading data...</h2>
+            return (
+                <div className="loader"><Loader type="ThreeDots" color="#somecolor" height={80} width={80} /></div>
+            )
         }
         return (
             <div className="single-character">
-                <img className="single-char-img" src={this.state.item.image} />
+                <img className="single-char-img" src={this.state.item.image} alt={this.state.item.name} />
                 <ul className="single-char-details">
-                <h2>{this.state.item.name}</h2>
-                <li><strong>Status </strong><span>{this.state.item.status}</span></li>
-                <li><strong>Species </strong><span>{this.state.item.species}</span></li>
-                <li><strong>Gender </strong><span>{this.state.item.gender}</span></li>
-                <li><strong>last Location </strong><span>{this.state.item.location.name}</span></li>
-                <li><strong>origin </strong><span>{this.state.item.origin.name}</span></li>
+                    <h2>{this.state.item.name}</h2>
+                    <li><strong>Status </strong><span>{this.state.item.status}</span></li>
+                    <li><strong>Species </strong><span>{this.state.item.species}</span></li>
+                    <li><strong>Gender </strong><span>{this.state.item.gender}</span></li>
+                    <li><strong>last Location </strong><span>{this.state.item.location.name}</span></li>
+                    <li><strong>origin </strong><span>{this.state.item.origin.name}</span></li>
                 </ul>
             </div>
         )

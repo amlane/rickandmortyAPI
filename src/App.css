@@ -47,27 +47,51 @@ h1 {
 }
 
 .character-card {
-  margin: 16px;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 105px;
+  height: 105px;
   box-shadow: 0 0 8px silver;
+  border: 1px solid silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: silver;
+}
+
+.character-list a {
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.character-card:hover {
+  transform: scale(1.1);
 }
 
 .character-avatar {
   border-radius: 50%;
   width: 100px;
+  border: 1px solid silver;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .single-character {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  padding: 70px 0;
-  max-width: 700px;
-  border: 1px solid;
-  background: gray;
+  margin: 55px auto;
+  padding: 30px 0;
+  max-width: 350px;
+  width: 95%;
+  border: 1px solid silver;
+  box-shadow: 0 0 8px silver;
+  background: rgb(240, 240, 240);
 }
 
 .single-char-img {
@@ -77,7 +101,8 @@ h1 {
 
 .single-char-details {
   list-style: none;
-  width: 225px;
+  padding: 10px;
+  width: 250px;
 }
 
 .single-char-details h2 {
@@ -90,6 +115,11 @@ h1 {
   justify-content: space-between;
   padding: 5px;
   border-bottom: 1px solid silver;
+  font-size: 0.7rem;
+}
+
+.single-char-details span {
+  color: rgb(255, 130, 116);
 }
 
 
