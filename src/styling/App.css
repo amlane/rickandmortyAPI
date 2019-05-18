@@ -64,7 +64,7 @@ button:hover {
   justify-content: center;
   margin: 0 auto;
   padding: 30px 0;
-  width: 60%;
+  width: 70%;
   border-radius: 25px;
 }
 
@@ -73,12 +73,13 @@ button:hover {
   width: 130px;
   height: 130px;
   box-shadow: 0 0 8px #00F0A3;
-  border: 8px solid #2B2434;
+  border: 8px solid transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: #00F0A3;
+  background: #FAFAFA;
+  transition: .2s linear;
 }
 
 .character-list a {
@@ -88,13 +89,12 @@ button:hover {
 
 .character-card:hover {
   transform: scale(1.1);
-  border: 1px solid #00F0A3;
+  border: 5px solid #00F0A3;
 }
 
 .character-avatar {
   border-radius: 50%;
   width: 125px;
-  border: 5px solid #00F0A3;
   opacity: 1;
 }
 
@@ -153,7 +153,7 @@ button:hover {
 }
 
 .about-page p {
-  background: #2B2434;;
+  background: #FAFAFA;;
   margin: 25px auto;
   border-radius: 8px;
   width: 40vw;
@@ -161,9 +161,11 @@ button:hover {
   font-size: 1rem;
   font-family: sans-serif;
   line-height: 1.5;
-  color: #00F0A3;
+  color: black;
   font-family: 'Indie Flower', cursive;
   font-weight: bold;
+  border: 1px solid #00F0A3;
+  box-shadow: 0 0 8px #00F0A3;
 }
 
 

@@ -21,9 +21,9 @@ class App extends React.Component{
 
   componentDidMount(){
     axios
-    .get(`https://rickandmortyapi.com/api/character/`)
+    .get(`https://rickandmortyapi.com/api/character/?page=${this.state.pageNum}`)
     .then( res => {
-      this.setState({ data: res.data.results })
+      this.setState({ data: res.data.results, pageNum: this.state.pageNum  })
     })
     .catch( err => {
       console.log(err)
