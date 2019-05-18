@@ -6,7 +6,7 @@ function CharacterList(props){
     return (
         <>
         <div className="btn-wrapper">
-        <button onClick={props.pageChange}>Prev</button> <button>Next</button>
+        <button onClick={props.pageChangeDecrement}>Prev</button> <button onClick={props.pageChangeIncrement}>Next</button>
         </div>
         <div className="character-list">
         {props.data.map( item => {

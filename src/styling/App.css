@@ -54,14 +54,16 @@
   border: 1px solid;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .character-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 30px auto;
+  margin: 0 auto;
   padding: 30px 0;
-  /* background: #2B2434; */
-  /* background: #FAFAFA; */
   width: 60%;
   border-radius: 25px;
 }
@@ -163,6 +165,7 @@
   font-family: 'Indie Flower', cursive;
   font-weight: bold;
 }
+
 
 
 

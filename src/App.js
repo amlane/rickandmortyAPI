@@ -15,11 +15,22 @@ class App extends React.Component{
     super();
     this.state = {
       data: [],
-      pageNum: 2
+      pageNum: 1
     }
   }
 
   componentDidMount(){
+    axios
+    .get(`https://rickandmortyapi.com/api/character/`)
+    .then( res => {
+      this.setState({ data: res.data.results })
+    })
+    .catch( err => {
+      console.log(err)
+    })
+  }
+
+  componentDidUpdate(){
     axios
     .get(`https://rickandmortyapi.com/api/character/?page=${this.state.pageNum}`)
     .then( res => {
@@ -30,14 +41,19 @@ class App extends React.Component{
     })
   }
 
-  pageChange = e => {
+  pageChangeDecrement = e => {
     e.preventDefault();
-    console.log('clicked')
     if(this.state.pageNum === 1) return;
+    this.setState({ 
+      pageNum: --this.state.pageNum
+     })
+  }
+
+  pageChangeIncrement = e => {
+    e.preventDefault();
     this.setState({ 
       pageNum: ++this.state.pageNum
      })
-     console.log(this.state.pageNum);
   }
 
 
@@ -59,7 +75,8 @@ class App extends React.Component{
         {...props} 
         data={this.state.data} 
         pageNum={this.state.pagNum}
-        pageChange={this.pageChange}
+        pageChangeIncrement={this.pageChangeIncrement}
+        pageChangeDecrement={this.pageChangeDecrement}
         /> } />
         <Route 
         path="/character-list/:id"
