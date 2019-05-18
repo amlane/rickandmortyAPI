@@ -8,6 +8,8 @@ import CharacterList from "./components/CharacterList";
 import Home from "./components/Home";
 import Character from "./components/Character";
 import About from "./components/About";
+import Episode from "./components/Episode";
+import EpisodeList from "./components/EpisodeList";
 
 class App extends React.Component {
   constructor() {
@@ -25,7 +27,6 @@ class App extends React.Component {
         `https://rickandmortyapi.com/api/character/?page=${this.state.pageNum}`
       )
       .then(res => {
-        console.log(res.data.info.pages);
         this.setState({
           data: res.data.results,
           totalPages: res.data.info.pages
@@ -37,7 +38,6 @@ class App extends React.Component {
   }
 
   fetchData() {
-    console.log(this.state.pageNum);
     axios
       .get(
         `https://rickandmortyapi.com/api/character/?page=${this.state.pageNum}`
@@ -82,6 +82,9 @@ class App extends React.Component {
           <NavLink exact to="/character-list">
             Characters
           </NavLink>
+          <NavLink exact to="/episode-list">
+            Episodes
+          </NavLink>
           <NavLink exact to="/about">
             About
           </NavLink>
@@ -106,6 +109,11 @@ class App extends React.Component {
           path="/character-list/:id"
           render={props => <Character {...props} data={this.state.data} />}
         />
+        <Route
+          path="/episode/:id"
+          render={props => <Episode {...props} data={this.state.data} />}
+        />
+        <Route path="/episode-list" component={EpisodeList} />
         <Route path="/about" component={About} />
       </div>
     );
