@@ -7,6 +7,7 @@ import axios from 'axios';
 import CharacterList from './components/CharacterList';
 import Home from './components/Home';
 import Character from './components/Character';
+import About from './components/About';
 
 
 class App extends React.Component{
@@ -34,9 +35,10 @@ class App extends React.Component{
     return (
       <div className="App">
 
-        <nav>
-          <NavLink to="/">Home</NavLink>{" "}
+        <nav className="nav-links">
+          <NavLink exact to="/">Home</NavLink>{" "}
           <NavLink exact to="/character-list">Characters</NavLink>
+          <NavLink exact to="/about">About</NavLink>
         </nav>
 
         <Route exact path="/" component={Home} />
@@ -48,9 +50,8 @@ class App extends React.Component{
         {...props}
         data={this.state.data} 
         /> }
-        />
- 
-        
+        /> 
+        <Route path="/about" component={About} />
       </div>
     );
   }

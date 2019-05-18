@@ -20,13 +20,21 @@ class Character extends React.Component{
     }
 
     render(){
+        console.log(this.state.item)
         if(!this.state.item) {
-            console.log(this.state.item)
             return <h2>Loading data...</h2>
         }
         return (
-            <div className="character">
-                <p>{this.state.item.name}</p>
+            <div className="single-character">
+                <img className="single-char-img" src={this.state.item.image} />
+                <ul className="single-char-details">
+                <h2>{this.state.item.name}</h2>
+                <li><strong>Status </strong><span>{this.state.item.status}</span></li>
+                <li><strong>Species </strong><span>{this.state.item.species}</span></li>
+                <li><strong>Gender </strong><span>{this.state.item.gender}</span></li>
+                <li><strong>last Location </strong><span>{this.state.item.location.name}</span></li>
+                <li><strong>origin </strong><span>{this.state.item.origin.name}</span></li>
+                </ul>
             </div>
         )
     }

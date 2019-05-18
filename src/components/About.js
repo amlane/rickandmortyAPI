@@ -1,0 +1,21 @@
+import React from 'react';
+
+function About(){
+    return (
+        <div>
+            <p>
+            Isn't it obvious Morty? I froze him. I'm your worst nightmare, bitch! You gotta shove these seeds way up your butt Morty, waay up there. You’re like Hitler, but even Hitler cared about Germany or something.</p>
+
+            <p>Oh I say good sir, oh harumph, ohh a bope-a-dope-o-bobo. Holy crap, Morty, run! Run for your life, Morty, run! I-I've never seen that thing before in my life, Morty, I don't even know what the hell it is! We-we gotta get out of here, Morty, it's gonna kill us! We're gonna die, Morty! We're gonna die! We need a hang glider, and a crotch less uncle sam costume, and I want the entire field of your largest stadium covered end to end with naked red heads, and I want the stands packed with every man that remotely resembles my father. Wha, me irresponsible ?! All I wanted you to do was to hand me a screwdriver, Morty!</p>
+
+            <p>It's a dream, Morty! We're in your dog's dream. The night the dogs captured us, after you cried and crapped your pants, we-we all went to sleep. Then I used my dream inceptors to put the two of us inside Snuffles' dream. My man! We don't whitewash it either, Morty. I mean, the pirates are really rapey. Not MY fault this is happening.</p>
+
+            <p>Well I don't like your unemployed genes in my grandchildren, Jerry. Aw, geez. I've replaced them both as the de facto patriarch of your family and your universe. Your mom wouldn't have accepted me if I came home without you and your sister, so now you know the real reason I rescued you. I just took over the family, Morty! And if you tell your mom or sister I said any of this, I'll deny it, and they'll take my side because I'm a hero, Morty! And now you're gonna have to go and do whatever I say, Morty! Forever! An-and I-I-I'll go out and I'll find some more of that Mulan szechuan teriyaki dipping sauce, Morty! Th-b-because that's what this is all about Morty! Th-that's my one-armed man! I'm not driven by avenging my dead family, Morty, that was fake! I-I-I'm driven by finding that mcnuggut sauce! I want that Mulan mcnuggut sauce, Morty! That's my series arc, Morty! If it takes nine seasons, I want my mcnuggut dipping sauce szechuan sauce, Morty! That's what's gon-it's gonna take us all the way to the end, Morty! Season nine more seasons, Morty! Nine more seasons until I get that dipping szechuan sauce! For ninety-seven more years, Morty! I want that mcnuggut sauce Morty! If you break the rules, try to leave or lose the game, you will die. Just like Saaaaw.</p>
+
+            <p>Rick, the only connection between your unquestionable intelligence and the sickness destroying your family is that everyone in your family, you included, use intelligence to justify sickness. You seem to alternate between viewing your own mind as an unstoppable force and as an inescapable curse. And I think it's because the only truly unapproachable concept for you is that it's your mind within your control. You chose to come here, you chose to talk to belittle my vocation, just as you chose to become a pickle. You are the master of your universe, and yet you are dripping with rat blood and feces. Your enormous mind literally vegetating by your own hand. I have no doubt that you would be bored senseless by therapy, the same way I'm bored when I brush my teeth and wipe my ass. Because the thing about repairing, maintaining, and cleaning is it's not an adventure. There's no way to do it so wrong you might die. It's just work. And the bottom line is, some people are okay going to work, and some people... well, some people would rather die. Each of us gets to choose. Nothing you do matters, your existence is a lie! Burgertime! Like nothing shady ever happened in a fully furnished office? You ever hear about Wall Street Morty? You know what those guys do in their fancy board rooms? They take their balls and dip 'em in cocaine and wipe 'em all over each other. You know Grandpa goes around and he does his business in public because grandpa isn't shady.  
+            </p>
+        </div>
+    )
+}
+
+export default About;
