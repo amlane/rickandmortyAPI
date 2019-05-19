@@ -52,7 +52,7 @@ class App extends React.Component {
 
   pageChangeDecrement = e => {
     e.preventDefault();
-    if (this.state.pageNum === 1) return;
+    // if (this.state.pageNum === 1) return;
     this.setState(
       prev => ({
         pageNum: --prev.pageNum

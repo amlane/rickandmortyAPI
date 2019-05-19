@@ -32,6 +32,7 @@ function EpisodeList(props) {
 
   const pageChangeIncrement = e => {
     e.preventDefault();
+    console.log('clickd')
     if (page === totalPages) return;
     setPage(page => ++page);
     fetchEpisodes();
@@ -43,7 +44,7 @@ function EpisodeList(props) {
           Prev
         </button>
         <button
-          disabled={props.page === props.totalPages}
+          disabled={page === totalPages}
           onClick={pageChangeIncrement}
         >
           Next
