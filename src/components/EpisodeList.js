@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function EpisodeList(props) {
+const EpisodeList = (props) => {
   const [episodes, setEpisodes] = useState([]);
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState();
+  const totalPages = null;
   useEffect(() => {
     fetchEpisodes();
-  }, []);
+  }, [page]);
 
   const fetchEpisodes = () => {
     axios
@@ -16,7 +16,7 @@ function EpisodeList(props) {
       .then(res => {
         console.log(res.data);
         setEpisodes(res.data.results);
-        setTotalPages(res.data.info.pages);
+        totalPages = res.data.info.pages;
       })
       .catch(err => {
         console.log(err);
@@ -26,15 +26,14 @@ function EpisodeList(props) {
   const pageChangeDecrement = e => {
     e.preventDefault();
     if (page === 1) return;
-    setPage(page => --page);
-    fetchEpisodes();
+    setPage(page => --page)
   };
 
   const pageChangeIncrement = e => {
     e.preventDefault();
     if (page === totalPages) return;
-    setPage(page => ++page);
-    fetchEpisodes();
+    setPage(page => ++page)
+    
   };
   return (
     <>
@@ -43,7 +42,7 @@ function EpisodeList(props) {
           Prev
         </button>
         <button
-          disabled={props.page === props.totalPages}
+          disabled={page === 2}
           onClick={pageChangeIncrement}
         >
           Next
