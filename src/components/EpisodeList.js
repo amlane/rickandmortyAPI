@@ -42,7 +42,7 @@ const EpisodeList = (props) => {
           Prev
         </button>
         <button
-          disabled={page === 2}
+          disabled={page === totalPages}
           onClick={pageChangeIncrement}
         >
           Next
