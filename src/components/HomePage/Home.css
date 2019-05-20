@@ -1,0 +1,27 @@
+.homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #02ABC3;
+    -webkit-text-stroke: 1px #00F0A3;
+    text-shadow: 0 0 8px #00F0A3;
+    font-family: misfits;
+    font-size: 12rem;
+    position: absolute;
+}
+
+h1 span {
+    font-size: 8rem;
+    position: relative;
+    bottom: 15px;
+}
+
+.hero-img {
+    width: 100vw;
+    margin: 0 auto;
+    object-fit: cover;
+    height: 85vh;
+}

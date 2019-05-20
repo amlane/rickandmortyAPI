@@ -31,6 +31,7 @@ const EpisodeList = (props) => {
 
   const pageChangeIncrement = e => {
     e.preventDefault();
+    console.log('clickd')
     if (page === totalPages) return;
     setPage(page => ++page)
     

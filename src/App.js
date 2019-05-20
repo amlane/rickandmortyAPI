@@ -4,12 +4,12 @@ import { Route, NavLink } from "react-router-dom";
 import "./styling/App.css";
 
 import axios from "axios";
-import CharacterList from "./components/CharacterList";
-import Home from "./components/Home";
-import Character from "./components/Character";
-import About from "./components/About";
-import Episode from "./components/Episode";
-import EpisodeList from "./components/EpisodeList";
+import CharacterList from "./components/CharacterPage/CharacterList";
+import Home from "./components/HomePage/Home";
+import Character from "./components/CharacterPage/Character";
+import About from "./components/AboutPage/About";
+import Episode from "./components/Episode Page/Episode";
+import EpisodeList from "./components/Episode Page/EpisodeList";
 
 class App extends React.Component {
   constructor() {
@@ -52,7 +52,7 @@ class App extends React.Component {
 
   pageChangeDecrement = e => {
     e.preventDefault();
-    if (this.state.pageNum === 1) return;
+    // if (this.state.pageNum === 1) return;
     this.setState(
       prev => ({
         pageNum: --prev.pageNum
@@ -75,6 +75,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Route exact path="/" component={Home} />
+
         <nav className="nav-links">
           <NavLink exact to="/">
             Home
@@ -90,7 +92,6 @@ class App extends React.Component {
           </NavLink>
         </nav>
 
-        <Route exact path="/" component={Home} />
         <Route
           exact
           path="/character-list"
