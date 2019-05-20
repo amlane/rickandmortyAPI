@@ -5,11 +5,11 @@
 }
 
 body {
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  /* background: rgb(233, 228, 228); */
-  color: black;
-  font-size: 62.5%;
-  background: url('./rickandmortybg.svg') no-repeat center center fixed;
+  background: black;
+}
+
+@font-face {
+  font-family: misfits;
+  src: url('./MISFITS_.TTF');
 }
 
