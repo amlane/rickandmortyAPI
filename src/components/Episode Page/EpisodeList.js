@@ -1,44 +1,48 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
-const EpisodeList = (props) => {
-  const [episodes, setEpisodes] = useState([]);
-  const [page, setPage] = useState(1);
-  const totalPages = null;
-  useEffect(() => {
-    fetchEpisodes();
-  }, [page]);
+const cache = {};
+let totalPages = null;
 
-  const fetchEpisodes = () => {
-    axios
-      .get(`https://rickandmortyapi.com/api/episode?page=${page}`)
-      .then(res => {
-        console.log(res.data);
-        setEpisodes(res.data.results);
-        totalPages = res.data.info.pages;
-      })
-      .catch(err => {
-        console.log(err);
-      });
+const EpisodeList = () => {
+  const [page, setPage] = useState(1);
+  
+  useEffect(() => {
+    fetchEpisodes().then(res => totalPages = res.info.pages);
+  }, []);
+
+  async function fetchEpisodes () {    
+      const res = await fetch(`https://rickandmortyapi.com/api/episode?page=${page}`);
+      return await res.json()
   };
 
   const pageChangeDecrement = e => {
     e.preventDefault();
     if (page === 1) return;
-    setPage(page => --page)
+    setPage(page => page - 1)
   };
 
   const pageChangeIncrement = e => {
     e.preventDefault();
-    console.log('clickd')
     if (page === totalPages) return;
-    setPage(page => ++page)
-    
+    setPage(page => page + 1)    
   };
+
+  const showList = cache[`${page}`];
+  if (showList === undefined) {
+    const promise = fetchEpisodes(page).then(
+      showsData => {
+        cache[`${page}`] = showsData.results
+      }
+    );
+    throw promise;
+  }
+
   return (
     <>
+
       <div className="btn-wrapper">
+      
         <button disabled={page === 1} onClick={pageChangeDecrement}>
           Prev
         </button>
@@ -49,8 +53,9 @@ const EpisodeList = (props) => {
           Next
         </button>
       </div>
+
       <div className="character-list">
-        {episodes.map(item => {
+        {showList.map(item => {
           return (
             <Link
               key={item.id}
@@ -62,6 +67,7 @@ const EpisodeList = (props) => {
           );
         })}
       </div>
+
     </>
   );
 }

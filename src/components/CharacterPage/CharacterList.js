@@ -19,7 +19,7 @@ function CharacterList(props) {
         </button>
       </div>
       <div className="character-list">
-        {props.data.map(item => {
+        {props.data && props.data.map(item => {
           return (
             <Link
               key={item.id}

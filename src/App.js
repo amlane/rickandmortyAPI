@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Route, NavLink } from "react-router-dom";
 
+import Loader from 'react-loader-spinner'; 
 import "./styling/App.css";
 
 import axios from "axios";
@@ -22,25 +23,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get(
-        `https://rickandmortyapi.com/api/character/?page=${this.state.pageNum}`
-      )
-      .then(res => {
-        this.setState({
-          data: res.data.results,
-          totalPages: res.data.info.pages
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
+      this.fetchData(1)
   }
 
-  fetchData() {
+  fetchData(page) {
     axios
       .get(
-        `https://rickandmortyapi.com/api/character/?page=${this.state.pageNum}`
+        `https://rickandmortyapi.com/api/character/?page=${page}`
       )
       .then(res => {
         this.setState({ data: res.data.results });
@@ -53,22 +42,22 @@ class App extends React.Component {
   pageChangeDecrement = e => {
     e.preventDefault();
     // if (this.state.pageNum === 1) return;
+    this.fetchData(this.state.pageNum - 1)
     this.setState(
       prev => ({
-        pageNum: --prev.pageNum
-      }),
-      this.fetchData()
+        pageNum: prev.pageNum -1,
+      })
     );
   };
 
   pageChangeIncrement = e => {
     e.preventDefault();
     if (this.state.pageNum === this.state.totalPages) return;
+    this.fetchData(this.state.pageNum + 1)
     this.setState(
       prev => ({
-        pageNum: ++prev.pageNum
-      }),
-      this.fetchData()
+        pageNum: prev.pageNum + 1,
+      })
     );
   };
 
@@ -91,7 +80,11 @@ class App extends React.Component {
             About
           </NavLink>
         </nav>
-
+        <Suspense
+          fallback={
+            <Loader type="ThreeDots" color="#00F0A3" height={100} width={100} />
+          }
+        >
         <Route
           exact
           path="/character-list"
@@ -116,6 +109,7 @@ class App extends React.Component {
         />
         <Route path="/episode-list" component={EpisodeList} />
         <Route path="/about" component={About} />
+        </Suspense>
       </div>
     );
   }
