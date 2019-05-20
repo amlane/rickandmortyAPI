@@ -17,7 +17,6 @@ const Episode = props => {
       .then(res => {
         Array.from(res.data.characters).map(x => fetchChar(x));
         setEpisode(res.data);
-        console.log(res.data);
       })
       .catch(err => console.log(err));
   };
